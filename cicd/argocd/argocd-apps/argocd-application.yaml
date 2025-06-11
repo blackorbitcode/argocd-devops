@@ -21,7 +21,7 @@ spec:
         valueFiles:
           - $values/cicd/values/argocd/argocd-values.yaml
     # 2) Private Repo with custom values
-    - repoURL: hhttps://github.com/blackorbitcode/argocd-devops.git
+    - repoURL: https://github.com/blackorbitcode/argocd-devops.git
       targetRevision: main
       ref: values
   syncPolicy:

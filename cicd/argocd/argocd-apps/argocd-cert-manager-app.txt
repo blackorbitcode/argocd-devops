@@ -23,7 +23,7 @@ spec:
         # valueFiles:
         #   - $values/cicd/values/cert-manager/cert-manager-values.yaml
     # 2) Opcional: Repo privado para values customizados
-  #  - repoURL: hhttps://github.com/blackorbitcode/argocd-devops.git
+  #  - repoURL: https://github.com/blackorbitcode/argocd-devops.git
   #    targetRevision: main
   #   ref: values
   syncPolicy:
