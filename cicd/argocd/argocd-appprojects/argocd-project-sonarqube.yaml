@@ -7,7 +7,7 @@ spec:
   description: Projeto Argo CD para SonarQube
   sourceRepos:
     - 'https://SonarSource.github.io/helm-chart-sonarqube'
-    - 'https://github.com/patrickmanzo/Projects.git'
+    - 'https://github.com/blackorbitcode/argocd-devops.git'
   destinations:
     - namespace: sonarqube
       server: 'https://kubernetes.default.svc'

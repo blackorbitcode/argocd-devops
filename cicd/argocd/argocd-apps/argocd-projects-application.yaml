@@ -8,9 +8,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: "https://github.com/patrickmanzooo/arg.git"
+    repoURL: "https://github.com/blackorbitcode/argocd-devops.git"
     targetRevision: "main"
-    path: "devops-complete-ci-cd-projetct/argocd/argocd-appprojects" # <- Pasta onde armazenará AppProject YAMLs
+    path: "cicd/argocd/argocd-appprojects" # <- Pasta onde armazenará AppProject YAMLs
     directory:
       recurse: true
   destination:

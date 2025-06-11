@@ -7,7 +7,7 @@ spec:
   description: "Projeto para controlar os apps do ArgoCD."
   # Este project só permite esse repositório, em vez de '*'
   sourceRepos:
-  - "https://github.com/patrickmanzooo/arg.git"
+  - "https://github.com/blackorbitcode/argocd-devops.git"
   - "https://argoproj.github.io/argo-helm"  # Repositório do ArgoCD
   # Lista de destinos permitidos
   destinations:

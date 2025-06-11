@@ -18,9 +18,9 @@ spec:
       targetRevision: "5.8.56"
       helm:
         valueFiles:
-          - $values/devops-complete-ci-cd-projetct/values/jenkins/jenkins-values.yaml
+          - $values/cicd/values/jenkins/jenkins-values.yaml
     # 2) Private Repo with custom values
-    - repoURL: https://github.com/patrickmanzo/Projects.git
+    - repoURL: https://github.com/blackorbitcode/argocd-devops.git
       targetRevision: main
       ref: values
   syncPolicy:

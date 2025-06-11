@@ -7,7 +7,7 @@ spec:
   description: Projeto exclusivo para o cert-manager
   sourceRepos:
     - 'https://charts.jetstack.io'
-    - 'https://github.com/patrickmanzo/Projects.git'
+    - 'https://github.com/blackorbitcode/argocd-devops.git'
   destinations:
     - namespace: cert-manager
       server: 'https://kubernetes.default.svc'

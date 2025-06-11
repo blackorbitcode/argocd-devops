@@ -7,7 +7,7 @@ spec:
   description: Projeto Argo CD para Rancher.
   sourceRepos:
     - 'https://releases.rancher.com/server-charts/stable'
-    - 'https://github.com/patrickmanzo/Projects.git'
+    - 'https://github.com/blackorbitcode/argocd-devops.git'
   destinations:
     - namespace: rancher
       server: 'https://kubernetes.default.svc'

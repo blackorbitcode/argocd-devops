@@ -8,9 +8,9 @@ metadata:
 spec:
   project: argo-cd
   source:
-    repoURL: "https://github.com/patrickmanzooo/arg.git"
+    repoURL: "https://github.com/blackorbitcode/argocd-devops.git"
     targetRevision: "main"
-    path: "devops-complete-ci-cd-projetct/argocd/argocd-apps" # <- pasta “apps” onde ficarão os YAMLs dos CRD´s de cada aplicação
+    path: "cicd/argocd/argocd-apps" # <- pasta “apps” onde ficarão os YAMLs dos CRD´s de cada aplicação
     directory:
       recurse: true # Lê subpastas
   destination:

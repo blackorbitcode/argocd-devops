@@ -21,9 +21,9 @@ spec:
             value: "true"
         # Se quiser usar um arquivo values.yaml customizado, adicione abaixo:
         # valueFiles:
-        #   - $values/devops-complete-ci-cd-projetct/values/cert-manager/cert-manager-values.yaml
+        #   - $values/cicd/values/cert-manager/cert-manager-values.yaml
     # 2) Opcional: Repo privado para values customizados
-  #  - repoURL: https://github.com/patrickmanzo/Projects.git
+  #  - repoURL: hhttps://github.com/blackorbitcode/argocd-devops.git
   #    targetRevision: main
   #   ref: values
   syncPolicy:

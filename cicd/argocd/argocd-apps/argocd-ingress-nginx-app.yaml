@@ -18,9 +18,9 @@ spec:
       targetRevision: "4.10.1"
       helm:
         valueFiles:
-          - $values/devops-complete-ci-cd-projetct/values/nginx-ingress-controller/ingress-nginx-values.yaml
+          - $values/cicd/values/nginx-ingress-controller/ingress-nginx-values.yaml
     # 2) Private Repo with custom values
-    - repoURL: https://github.com/patrickmanzooo/arg.git
+    - repoURL: https://github.com/blackorbitcode/argocd-devops.git
       targetRevision: main
       ref: values
   syncPolicy:
