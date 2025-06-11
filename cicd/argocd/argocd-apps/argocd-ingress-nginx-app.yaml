@@ -1,0 +1,41 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: ingress-nginx-application
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: ingress-nginx-project
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: ingress-nginx # Namespace for Ingress Nginx
+  # --- Multiple Sources ---
+  sources:
+    # 1) Public Chart
+    - repoURL: https://kubernetes.github.io/ingress-nginx
+      chart: ingress-nginx
+      targetRevision: "4.10.1"
+      helm:
+        valueFiles:
+          - $values/devops-complete-ci-cd-projetct/values/nginx-ingress-controller/ingress-nginx-values.yaml
+    # 2) Private Repo with custom values
+    - repoURL: https://github.com/patrickmanzooo/arg.git
+      targetRevision: main
+      ref: values
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
+      # allowEmpty: false
+    retry:
+      limit: 5
+      backoff:
+        duration: "30s"
+        factor: 2
+        maxDuration: "300s"
+    syncOptions:
+      # - ServerSideApply=true      # Server-Side Apply for better conflict resolution
+      - CreateNamespace=true
+      - PruneLast=true            # Prune resources after the sync operation
+      - ApplyOutOfSyncOnly=true   # Only apply changes if the resource is out of sync

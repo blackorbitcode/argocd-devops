@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-apps
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  project: argo-cd
+  source:
+    repoURL: "https://github.com/patrickmanzooo/arg.git"
+    targetRevision: "main"
+    path: "devops-complete-ci-cd-projetct/argocd/argocd-apps" # <- pasta “apps” onde ficarão os YAMLs dos CRD´s de cada aplicação
+    directory:
+      recurse: true # Lê subpastas
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: "argocd"
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      # allowEmpty: false
+    retry:
+      limit: 5  # Número máximo de tentativas
+      backoff:
+        duration: "30s"  # Tempo entre tentativas
+        factor: 2  # Multiplicador do tempo de espera
+        maxDuration: "300s"  # Tempo máximo de espera
+    syncOptions:
+      - CreateNamespace=true

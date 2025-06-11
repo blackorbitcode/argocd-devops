@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: argo-cd
+  namespace: argocd
+spec:
+  description: "Projeto para controlar os apps do ArgoCD."
+  # Este project só permite esse repositório, em vez de '*'
+  sourceRepos:
+  - "https://github.com/patrickmanzooo/arg.git"
+  - "https://argoproj.github.io/argo-helm"  # Repositório do ArgoCD
+  # Lista de destinos permitidos
+  destinations:
+  - name: '*'
+    namespace: '*'
+    server: '*'
+  # Quais tipos de recursos de cluster são permitidos
+  clusterResourceWhitelist:
+  - group: '*'
+    kind: '*'
+  # Quais tipos de recursos de namespace são permitidos
+  namespaceResourceWhitelist:
+  - group: '*'
+    kind: '*'

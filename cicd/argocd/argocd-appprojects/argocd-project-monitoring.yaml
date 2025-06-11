@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: monitoring-project
+  namespace: argocd
+spec:
+  description: Projeto Argo CD para o Kube-Prometheus-Stack.
+  sourceRepos:
+    - 'https://prometheus-community.github.io/helm-charts'
+    - 'https://github.com/patrickmanzo/Projects.git'
+  destinations:
+    - namespace: monitoring
+      server: 'https://kubernetes.default.svc'
+    - namespace: kube-system
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'

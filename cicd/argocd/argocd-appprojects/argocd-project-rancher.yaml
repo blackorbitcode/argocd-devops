@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: rancher-project
+  namespace: argocd
+spec:
+  description: Projeto Argo CD para Rancher.
+  sourceRepos:
+    - 'https://releases.rancher.com/server-charts/stable'
+    - 'https://github.com/patrickmanzo/Projects.git'
+  destinations:
+    - namespace: rancher
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'

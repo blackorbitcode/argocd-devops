@@ -1,0 +1,38 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: rancher-application
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  project: rancher-project
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: rancher
+  sources:
+    - repoURL: https://releases.rancher.com/server-charts/stable
+      chart: rancher
+      targetRevision: "2.11.2"
+      helm:
+        valueFiles:
+          - $values/devops-complete-ci-cd-projetct/values/rancher/rancher-values.yaml
+    - repoURL: https://github.com/patrickmanzo/Projects.git
+      targetRevision: main
+      ref: values
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+      # allowEmpty: false
+    retry:
+      limit: 5
+      backoff:
+        duration: "30s"
+        factor: 2
+        maxDuration: "300s"
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
+      - PruneLast=true
+      - ApplyOutOfSyncOnly=true

@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: ingress-nginx-project
+  namespace: argocd
+spec:
+  description: Projeto Argo CD para Ingress-NGINX
+  sourceRepos:
+    - 'https://kubernetes.github.io/ingress-nginx'
+    - 'https://github.com/patrickmanzo/Projects.git'
+  destinations:
+    - namespace: ingress-nginx
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
