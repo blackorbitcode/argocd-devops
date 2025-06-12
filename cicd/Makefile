@@ -187,8 +187,8 @@ hosts:
 	@echo ""
 	@echo "$(BOLD)$(YELLOW)───────────────────── ATUALIZANDO HOSTS ─────────────────$(RESET)"
 	for h in $(SUBDOMAINS); do \
-	  if ! grep -q "^172\.17\.0\.50[[:space:]]$$h$$" /etc/hosts; then \
-	    sudo sh -c "echo '172.17.0.50 $$h' >> /etc/hosts"; \
+	  if ! grep -q "^172\.18\.0\.50[[:space:]]$$h$$" /etc/hosts; then \
+	    sudo sh -c "echo '172.18.0.50 $$h' >> /etc/hosts"; \
 	  fi; \
 	done
 	@echo "$(GREEN)$(CHECK) /etc/hosts atualizado$(RESET)"
