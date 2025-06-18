@@ -203,9 +203,9 @@ passwords:
 	@echo ""
 	@echo "$(BOLD)$(CYAN)───────────────────── CREDENCIAIS ──────────────────────$(RESET)"
 	@echo "Jenkins →"; kubectl get secret -n jenkins jenkins -o jsonpath='{.data.jenkins-admin-user}' | base64 -d; echo -n ":"; kubectl get secret -n jenkins jenkins -o jsonpath='{.data.jenkins-admin-password}' | base64 -d; echo
-	@echo "Gitea → gitea_admin : r8sA8CPHD9!bt6d"
-	@echo "Harbor → admin : Harbor12345"
-	@echo "SonarQube → admin : Sonarqube12345!"
+	@echo "Gitea → gitea_admin : adminadmin"
+	@echo "Harbor → admin : admin"
+	@echo "SonarQube → admin : adminn"
 	@echo "$(BOLD)$(CYAN)─────────────────────────────────────────────────────────$(RESET)"
 
 # ---------------------------------------------------------------------------
