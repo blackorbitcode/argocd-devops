@@ -406,7 +406,7 @@ controller:
     - workflow-aggregator:608.v67378e9d3db_1
     - git:5.7.0
     - configuration-as-code:1971.vf9280461ea_89
-    - dark-theme:567.v9d3ca_a_3142f5
+    - dark-theme:514.va_3ea_73d65dc1
     - blueocean-git-pipeline:1.27.20
 
   # If set to false, Jenkins will download the minimum required version of all dependencies.
